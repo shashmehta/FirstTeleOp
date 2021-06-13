@@ -28,12 +28,14 @@ public class Main.java extends LinearOpMode{
 	// arm
 	private Servo armServo;
 
+	//private attrubutes are not accessible from outisde this class.
+
 	private static final double ARM_RETRACTED_POSITION = 0.2;
 	private static final double ARM_EXTENDED_POSITION = 0.8;
 
   @Override
   public void runOpMode() throws InterupptedExeption{
-    // assign to the harware map
+    // obtain motor objects from the harware map
 		motorleft = hardwareMap.dcMotor.get("motorleft");
 		motorright = hardwareMap.dcMotor.get("motorright");
 
@@ -65,7 +67,7 @@ public class Main.java extends LinearOpMode{
 			}
 
 
-			// lets hardware catch up
+			// idle function lets hardware catch up
       idle();
     }
   }
